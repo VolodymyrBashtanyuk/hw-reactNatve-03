@@ -8,9 +8,20 @@ import {
   DancingScript_600SemiBold,
   DancingScript_700Bold,
 } from '@expo-google-fonts/dancing-script';
-import { StyleSheet, Text, View, ImageBackground, TextInput, TouchableOpacity, Platform, KeyboardAvoidingView, Keyboard, TouchableWithoutFeedback, useWindowDimensions } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ImageBackground,
+  TextInput,
+  TouchableOpacity,
+  Platform,
+  KeyboardAvoidingView,
+  Keyboard,
+  TouchableWithoutFeedback,
+  useWindowDimensions
+} from 'react-native';
 
-// SplashScreen.preventAutoHideAsync();
 
 const data = {
     email: '',
@@ -83,49 +94,44 @@ export default function App() {
 
 
   return (
-   
-       <TouchableWithoutFeedback onPress={keyboardVanish} >
-
-    <View style={styles.container} onLayout={onLayoutRootView} >
-        <ImageBackground style={styles.image} source={require('./assets/images/image-app.jpeg')}>
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-
-    
-            <View style={{ ...styles.form, marginBottom: isShowKeyboard ? 50 : 10, marginHorizontal: width > 800 ? 50 : 20,}}>
-              <View style={styles.header}>
-                <Text style={styles.headerTitle  }>Registration form</Text>
-              </View>
-              <View>
-                <Text style={styles.imputTitle}>Email adress</Text>
-                <TextInput
-                  style={styles.input}
-                  textAlign={'center'}
-                  value={colectData.email}
-                  onFocus={() => setIsShowKeyboard(true)}
-                  onChangeText={(value) => setColectData((prevState) => ({...prevState, email: value}))}
+      <TouchableWithoutFeedback onPress={keyboardVanish} >
+        <View style={styles.container} onLayout={onLayoutRootView} >
+          <ImageBackground style={styles.image} source={require('./assets/images/image-app.jpeg')}>
+            <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+              <View style={{ ...styles.form, marginBottom: isShowKeyboard ? 50 : 10, marginHorizontal: width > 800 ? 50 : 20,}}>
+                <View style={styles.header}>
+                  <Text style={styles.headerTitle  }>Registration form</Text>
+                </View>
+                <View>
+                  <Text style={styles.imputTitle}>Email adress</Text>
+                    <TextInput
+                      style={styles.input}
+                      textAlign={'center'}
+                      value={colectData.email}
+                      onFocus={() => setIsShowKeyboard(true)}
+                      onChangeText={(value) => setColectData((prevState) => ({...prevState, email: value}))}
+                      />
+                </View>
+                <View style={{marginTop: 20}}>
+                  <Text style={styles.imputTitle}>Password</Text>
+                  <TextInput
+                    style={styles.input}
+                    textAlign={'center'}
+                    secureTextEntry={true}
+                    value={colectData.password}
+                    onFocus={() => setIsShowKeyboard(true)}
+                    onChangeText={(value) => setColectData((prevState) => ({...prevState, password: value}))}
                   />
-              </View>
-              <View style={{marginTop: 20}}>
-                <Text style={styles.imputTitle}>Password</Text>
-                <TextInput
-                  style={styles.input}
-                  textAlign={'center'}
-                  secureTextEntry={true}
-                  value={colectData.password}
-                  onFocus={() => setIsShowKeyboard(true)}
-                  onChangeText={(value) => setColectData((prevState) => ({...prevState, password: value}))}
-                />
-              </View>
-              <TouchableOpacity activeOpacity={0.8} style={styles.btn} onPress={ keyboardHide}>
+                </View>
+                <TouchableOpacity activeOpacity={0.8} style={styles.btn} onPress={ keyboardHide}>
                   <Text style={styles.btnTitle}>SIGN IN</Text>
-              </TouchableOpacity>
-            </View>
-        </KeyboardAvoidingView>
-        </ImageBackground>
-
-    </View>
-      </TouchableWithoutFeedback>
-     
+                </TouchableOpacity>
+              </View>
+            </KeyboardAvoidingView>
+          </ImageBackground>
+        </View>
+    </TouchableWithoutFeedback>
+    
       
 
 
