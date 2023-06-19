@@ -42,8 +42,8 @@ export default function App() {
   //   const onChange = () => {
   //     // const width = Dimensions.get('window').width;
   //     width
-  console.log("width", width)
-  console.log("height", height)
+  // console.log("width", width)
+  // console.log("height", height)
   //   }
   //   // Dimensions.addEventListener("change", onChange);
   //   // return () => {
